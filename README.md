@@ -1,0 +1,1 @@
+# plugins-slide-everything-for-elementor
