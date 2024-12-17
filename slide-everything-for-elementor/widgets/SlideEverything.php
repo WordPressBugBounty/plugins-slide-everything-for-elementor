@@ -341,7 +341,7 @@ class Elementor_Widget_miga_slide_everything extends \Elementor\Widget_Base
     {
         wp_register_script(
             "swiper",
-            ELEMENTOR_ASSETS_URL . "/lib/swiper/swiper.min.js",
+            ELEMENTOR_ASSETS_URL . "/lib/swiper/v8/swiper.min.js",
             ["jquery"],
             false,
             true
@@ -351,7 +351,7 @@ class Elementor_Widget_miga_slide_everything extends \Elementor\Widget_Base
 
     public function get_style_depends()
     {
-        return ["miga_slide_everything_styles"];
+        return ["miga_slide_everything_styles", "swiper"];
     }
 
     protected function render()
