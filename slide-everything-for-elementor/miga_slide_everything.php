@@ -11,7 +11,7 @@
 * Plugin Name:       Slide everything for Elementor
 * Plugin URI:        https://wordpress.org/plugins/category-slider-for-elementor/
 * Description:       Creates a simple Swiper slider out of container elements
-* Version:           1.6.0
+* Version:           1.6.2
 * Requires at least: 5.2
 * Requires PHP:      7.2
 * Author:            Michael Gangolf
@@ -19,7 +19,7 @@
 * License:           GPL v2 or later
 * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
 * Text Domain:       miga_slide_everything
-* Elementor tested up to:  3.26
+* Elementor tested up to:  3.27
 */
 
 use Elementor\Plugin;

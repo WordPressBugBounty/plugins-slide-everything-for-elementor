@@ -15,6 +15,11 @@ class Elementor_Widget_miga_slide_everything extends \Elementor\Widget_Base
         );
     }
 
+    public function has_widget_inner_wrapper(): bool
+    {
+        return false;
+    }
+
     public function get_name()
     {
         return "miga_slide_everything_title";
@@ -35,7 +40,7 @@ class Elementor_Widget_miga_slide_everything extends \Elementor\Widget_Base
         return ["general"];
     }
 
-    protected function _register_controls()
+    protected function register_controls()
     {
         $this->start_controls_section("sec1", [
             "label" => __("Settings", "miga_slide_everything"),
@@ -339,14 +344,19 @@ class Elementor_Widget_miga_slide_everything extends \Elementor\Widget_Base
 
     public function get_script_depends()
     {
-        wp_register_script(
-            "swiper",
-            ELEMENTOR_ASSETS_URL . "/lib/swiper/v8/swiper.min.js",
-            ["jquery"],
-            false,
-            true
-        );
-        return ["swiper", "miga_slide_everything_scripts"];
+        if (version_compare(ELEMENTOR_VERSION, '3.26.3', '>=')) {
+            return ["swiper", "miga_slide_everything_scripts"];
+        } else {
+            wp_register_script(
+                "swiper",
+                ELEMENTOR_ASSETS_URL . "/lib/swiper/v8/swiper.min.js",
+                ["jquery"],
+                false,
+                true
+            );
+            return ["swiper", "miga_slide_everything_scripts"];
+        }
+
     }
 
     public function get_style_depends()
