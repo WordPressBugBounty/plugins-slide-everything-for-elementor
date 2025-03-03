@@ -21,6 +21,7 @@ function miga_slider_everything_init() {
 		var pagination = (slideObj.getAttribute("data-pagination") == 1);
 		var arrows = (slideObj.getAttribute("data-arrows") == 1);
 		var autoplayEnabled = slideObj.getAttribute("data-autoplay") || false;
+		var autoplayReverse = slideObj.getAttribute("data-autoplay-reverse") == 1;
 		var allowMouseWheel = slideObj.getAttribute("data-mousewheel") == 1;
 		var autoplayDelay = slideObj.getAttribute("data-autoplay-delay") || 2000;
 		var spaceBetween = slideObj.getAttribute("data-spacebetween") || 30;
@@ -34,6 +35,7 @@ function miga_slider_everything_init() {
 				delay: autoplayDelay,
 				disableOnInteraction: false,
 				pauseOnMouseEnter: true,
+				reverseDirection: autoplayReverse
 			}
 		}
 

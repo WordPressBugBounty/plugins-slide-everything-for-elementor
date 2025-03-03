@@ -74,6 +74,15 @@ class Elementor_Widget_miga_slide_everything extends \Elementor\Widget_Base
             "return_value" => "yes",
             "default" => "No",
         ]);
+        $this->add_control("autoplay_reverse", [
+            "label" => esc_html__("Autoplay reverse", "miga_slide_everything"),
+            "type" => \Elementor\Controls_Manager::SWITCHER,
+            "label_on" => esc_html__("Yes", "miga_slide_everything"),
+            "label_off" => esc_html__("No", "miga_slide_everything"),
+            "return_value" => "yes",
+            "default" => "No",
+            "condition" => ["automatic_slider" => "yes"],
+        ]);
         $this->add_control("autoplay_delay", [
             "label" => esc_html__(
                 "Autoplay delay (ms)",
@@ -372,6 +381,7 @@ class Elementor_Widget_miga_slide_everything extends \Elementor\Widget_Base
         $centerSlides = $settings["center_slides"] == "yes" ? 1 : 0;
         $mousewheel = $settings["mousewheel"] == "yes" ? 1 : 0;
         $automaticSlider = $settings["automatic_slider"] == "yes" ? 1 : 0;
+        $autoplayReverse = $settings["autoplay_reverse"] == "yes" ? 1 : 0;
         $newmethod = $settings["newmethod"] == "yes" ? 1 : 0;
         $pagination = $settings["pagination"] == "yes" ? 1 : 0;
         $arrows = $settings["arrows"] == "yes" ? 1 : 0;
@@ -402,6 +412,8 @@ class Elementor_Widget_miga_slide_everything extends \Elementor\Widget_Base
             esc_attr($centerSlides) .
             '" data-autoplay="' .
             esc_attr($automaticSlider) .
+            '" data-autoplay-reverse="' .
+            esc_attr($autoplayReverse) .
             '" data-newmethod="' .
             esc_attr($newmethod) .
             '" data-pagination="' .
@@ -425,6 +437,9 @@ class Elementor_Widget_miga_slide_everything extends \Elementor\Widget_Base
 
         if (!$isEditor) {
             echo '<style type="text/css">';
+
+            echo '#'.$settings["sliderId"].' .swiper-button-prev::after {content: none}';
+            echo '#'.$settings["sliderId"].' .swiper-button-next::after {content: none}';
             echo '#'.$settings["sliderId"].' .swiper-button-prev {background-image: none } ';
             echo '#'.$settings["sliderId"].' .swiper-button-next {background-image: none } ';
             echo '#'.$settings["sliderId"].' .swiper-button-prev svg path {fill:'.$settings["arrow_left"].'} ';
