@@ -3,8 +3,8 @@ Contributors: migaweb
 Tags: elementor, widgets, slider, swiper
 Donate link: https://www.buymeacoffee.com/miga
 Requires at least: 5.0
-Tested up to: 6.7
-Stable tag: 1.6.3
+Tested up to: 6.8
+Stable tag: 1.6.4
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -46,6 +46,10 @@ Currently only working with one slider in your page!
 1. Editor view
 
 == Changelog ==
+
+1.6.4
+* change init method
+* tested with WP 6.8 and Elementor 3.28
 
 1.6.3
 * fix for double arrows
