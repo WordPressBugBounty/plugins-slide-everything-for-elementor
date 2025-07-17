@@ -105,6 +105,16 @@ class Elementor_Widget_miga_slide_everything extends \Elementor\Widget_Base
             "condition" => ["automatic_slider" => "yes"],
         ]);
 
+
+        $this->add_control("free_mode", [
+            "label" => esc_html__("Free mode", "miga_slide_everything"),
+            "type" => \Elementor\Controls_Manager::SWITCHER,
+            "label_on" => esc_html__("Yes", "miga_slide_everything"),
+            "label_off" => esc_html__("No", "miga_slide_everything"),
+            "return_value" => "yes",
+            "default" => "No",
+        ]);
+
         $this->add_control("center_slides", [
             "label" => esc_html__("Center slides", "miga_slide_everything"),
             "type" => \Elementor\Controls_Manager::SWITCHER,
@@ -386,6 +396,7 @@ class Elementor_Widget_miga_slide_everything extends \Elementor\Widget_Base
         $pagination = $settings["pagination"] == "yes" ? 1 : 0;
         $arrows = $settings["arrows"] == "yes" ? 1 : 0;
         $touchmove = $settings["touchmove"] == "yes" ? 1 : 0;
+        $free_mode = $settings["free_mode"] == "yes" ? 1 : 0;
         $dotPadding = 10;
         if (isset($settings["dot_padding"])) {
             $dotPadding = $settings["dot_padding"]["size"];
@@ -422,6 +433,7 @@ class Elementor_Widget_miga_slide_everything extends \Elementor\Widget_Base
             'data-latestSwiper="' .$latestSwiper .'" '.
             'data-dot-padding="' .esc_attr($dotPadding) .'" '.
             'data-touchmove="' .esc_attr($touchmove) .'" '.
+            'data-freemode="' .esc_attr($free_mode) .'" '.
             'data-autoplay-delay="' .
             esc_attr($automaticSliderDelay) .
             '">';

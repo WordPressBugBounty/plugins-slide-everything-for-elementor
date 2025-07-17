@@ -4,7 +4,7 @@ Tags: elementor, widgets, slider, swiper
 Donate link: https://www.buymeacoffee.com/miga
 Requires at least: 5.0
 Tested up to: 6.8
-Stable tag: 1.6.4
+Stable tag: 1.7.0
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -46,6 +46,10 @@ Currently only working with one slider in your page!
 1. Editor view
 
 == Changelog ==
+
+1.7.0
+* freeMode option
+* tested with WP 6.8 and Elementor 3.30
 
 1.6.4
 * change init method

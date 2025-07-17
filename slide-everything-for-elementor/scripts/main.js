@@ -28,6 +28,7 @@ function miga_slider_everything_init() {
 		var dotPadding = slideObj.getAttribute("data-dot-padding") || 10;
 		var latestSwiper = slideObj.getAttribute("data-latestSwiper") || false;
 		var useNewsMethod = slideObj.getAttribute("data-newmethod") == 1;
+		var freeMode = slideObj.getAttribute("data-freemode") == 1;
 		var touchmove = slideObj.getAttribute("data-touchmove") == 1;
 		var autoplay = false;
 		if (autoplayEnabled == 1 && autoplayDelay > 0) {
@@ -97,6 +98,7 @@ function miga_slider_everything_init() {
 			centeredSlides: centerSlides,
 			navigation: arrowOptions,
 			mousewheel: allowMouseWheel,
+			freeMode: freeMode,
 			pagination: paginationOptions,
 			allowTouchMove: !touchmove,
 			navigation: {
